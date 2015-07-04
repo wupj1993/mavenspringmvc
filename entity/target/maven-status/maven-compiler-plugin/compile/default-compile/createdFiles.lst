@@ -1,0 +1,7 @@
+com\wpj\work\dao\T_orderMapper.class
+com\wpj\work\dao\T_userMapper.class
+com\wpj\work\dao\T_emptypeMapper.class
+com\wpj\work\dao\T_commentMapper.class
+com\wpj\work\dao\T_mastersMapper.class
+com\wpj\work\dao\T_orderStatusMapper.class
+com\wpj\work\dao\T_employeesMapper.class

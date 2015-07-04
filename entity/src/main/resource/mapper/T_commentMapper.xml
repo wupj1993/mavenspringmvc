@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ Copyright (c) 2015 -5 - 30  By wupeji QQ:757671834
+  ~
+  -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wpj.work.dao.T_commentMapper">
+    <resultMap id="BaseResultMap" type="T_comment">
+        <id column="c_id" property="cId" jdbcType="INTEGER"/>
+        <result column="c_content" property="cContent" jdbcType="VARCHAR"/>
+        <result column="e__id" property="eId" jdbcType="INTEGER"/>
+        <result column="c_datatime" property="cDatatime" jdbcType="TIMESTAMP"/>
+        <result column="emp_id" property="empId" jdbcType="INTEGER"/>
+        <result column="c_isdelete" property="isdelete" javaType="INTEGER"/>
+        <association property="t_employees" javaType="T_employees">
+            <result column="e_id" property="eId" jdbcType="INTEGER"/>
+            <result column="e_name" property="eName" jdbcType="VARCHAR"/>
+        </association>
+        <association property="t_masters" javaType="T_masters">
+            <result column="e_id" property="eId" jdbcType="INTEGER"/>
+            <result column="emp_name" property="empName" jdbcType="VARCHAR"/>
+        </association>
+    </resultMap>
+    <resultMap id="detailComment" extends="BaseResultMap" type="T_comment"></resultMap>
+    <!--查询所有的字段，实例化主键 -->
+    <sql id="Base_Column_List">
+            c_id, c_content, c_datatime, emp_id
+    </sql>
+    <sql id="allMessage">
+ c_id, c_content, t_employees.e_name, c_datatime, t_masters.emp_name
+    </sql>
+
+    <sql id="baseMessage">
+       com.c_id,
+       com.c_content,
+       com.c_datatime,
+       com.c_isdelete,
+       mas.emp_name,
+       emp.e_name
+</sql>
+    <sql id="condition">
+    left outer join t_employees emp on emp.e_id=com.e__id
+    left outer join t_masters mas on mas.e_id=com.emp_id
+    </sql>
+    <!--查询系类-->
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select 
+    c_id, c_content, e__id, c_datatime, emp_id
+    from t_comment
+    where c_id = #{cId,jdbcType=INTEGER}
+  </select>
+    <select id="selectAll" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="baseMessage"/>
+        from t_comment com
+        <include refid="condition"/>
+
+        <if test="isdelete!=null">
+            WHERE com.c_isdelete=#{isdelete,jdbcType=INTEGER}
+        </if>
+
+    </select>
+
+    <select id="selectByMasterId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="baseMessage"/>
+        from t_comment com
+        left outer join t_employees emp on emp.e_id=com.e__id
+        where emp_id=#{empId,jdbcType=INTEGER} and com.c_isdelete=1
+    </select>
+
+    <select id="selectByEmployeeId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+      SELECT com.c_id,
+       com.c_content,
+       com.c_datatime,
+       com.c_isdelete,
+		mas.emp_name
+        from t_comment com
+        left outer join  t_masters mas on  mas.e_id=com.emp_id
+        where e__id=#{eId,jdbcType=INTEGER} and com.c_isdelete=1
+    </select>
+    <!--         查询系类结束       -->
+    <!--
+    -删除评论系列，
+    -软删除
+    -->
+    <!--根据评论的id-->
+    <update id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        update t_comment
+         set   c_isdelete=0
+where c_id=#{cId,jdbcType=INTEGER}
+    </update>
+    <!--根据雇主的id-->
+    <update id="deleteByMasterKey" parameterType="java.lang.Integer">
+        update t_comment
+        set   c_isdelete=0
+        where emp_id=#{empId,jdbcType=INTEGER}
+    </update>
+    <!--根据员工的id删除-->
+    <update id="deleteByEmpKey" parameterType="java.lang.Integer">
+        update t_comment
+        set  c_isdelete=0
+        where emp_id=#{empId,jdbcType=INTEGER}
+    </update>
+    <!-- 删除系类结束
+
+        添加系类开始咯
+     -->
+    <insert id="insert" parameterType="T_comment">
+    insert into t_comment (c_id, c_content, e__id, 
+      c_datatime, emp_id)
+    values (#{cId,jdbcType=INTEGER}, #{cContent,jdbcType=VARCHAR}, #{eId,jdbcType=INTEGER}, 
+      #{cDatatime,jdbcType=TIMESTAMP}, #{empId,jdbcType=INTEGER})
+  </insert>
+
+    <insert id="insertSelective" parameterType="T_comment">
+        insert into t_comment
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="cId != null">
+                c_id,
+            </if>
+            <if test="cContent != null">
+                c_content,
+            </if>
+            <if test="eId != null">
+                e__id,
+            </if>
+            <if test="cDatatime != null">
+                c_datatime,
+            </if>
+            <if test="empId != null">
+                emp_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="cId != null">
+                #{cId,jdbcType=INTEGER},
+            </if>
+            <if test="cContent != null">
+                #{cContent,jdbcType=VARCHAR},
+            </if>
+            <if test="eId != null">
+                #{eId,jdbcType=INTEGER},
+            </if>
+            <if test="cDatatime != null">
+                #{cDatatime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="empId != null">
+                #{empId,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <!--添加 结束-->
+    <!--更新操作-->
+    <update id="updateByPrimaryKeySelective" parameterType="T_comment">
+        update t_comment
+        <set>
+            <if test="cContent != null">
+                c_content = #{cContent,jdbcType=VARCHAR},
+            </if>
+            <if test="eId != null">
+                e__id = #{eId,jdbcType=INTEGER},
+            </if>
+            <if test="cDatatime != null">
+                c_datatime = #{cDatatime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="empId != null">
+                emp_id = #{empId,jdbcType=INTEGER},
+            </if>
+        </set>
+        where c_id = #{cId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="T_comment">
+    update t_comment
+    set c_content = #{cContent,jdbcType=VARCHAR},
+      e__id = #{eId,jdbcType=INTEGER},
+      c_datatime = #{cDatatime,jdbcType=TIMESTAMP},
+      emp_id = #{empId,jdbcType=INTEGER}
+    where c_id = #{cId,jdbcType=INTEGER}
+  </update>
+
+</mapper>
