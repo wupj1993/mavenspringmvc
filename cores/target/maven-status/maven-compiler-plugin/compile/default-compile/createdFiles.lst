@@ -1,0 +1,9 @@
+com\wpj\service\serviceImpl\OrderServiceImp.class
+com\wpj\service\serviceImpl\UserServiceImp.class
+com\wpj\service\serviceImpl\EmployeesServiceImp.class
+com\wpj\service\security\ManagerDetialService.class
+com\wpj\service\serviceImpl\CommentServiceImp.class
+com\wpj\service\serviceImpl\OrderStatusServiceImp.class
+com\wpj\service\serviceImpl\MasterServiceImp.class
+com\wpj\service\serviceImpl\EmpTypeServiceImp.class
+com\wpj\service\security\MyUserDetails.class
