@@ -34,10 +34,11 @@
         <aspectjrt-version>1.6.10</aspectjrt-version>
         <ehcache-version>2.10.0</ehcache-version>
         <fastjson-version>1.1.26</fastjson-version>
-
+        <common-logging>1.2</common-logging>
     </properties>
     <dependencyManagement>
         <dependencies>
+
             <!--测试-->
             <dependency>
                 <groupId>junit</groupId>
@@ -45,6 +46,7 @@
                 <version>${junit-version}</version>
                 <scope>test</scope>
             </dependency>
+
             <!--数据库分页-->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
@@ -92,6 +94,11 @@
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-core</artifactId>
                 <version>${logback-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>${common-logging}</version>
             </dependency>
             <!--数据库-->
             <dependency>
