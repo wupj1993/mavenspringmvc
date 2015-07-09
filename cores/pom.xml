@@ -25,6 +25,10 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.springframework.webflow</groupId>
+            <artifactId>spring-webflow</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.wpj.work</groupId>
             <artifactId>entity</artifactId>
         </dependency>
@@ -39,6 +43,14 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.wpj.work</groupId>
+            <artifactId>common</artifactId>
         </dependency>
         <dependency>
             <groupId>log4j</groupId>
