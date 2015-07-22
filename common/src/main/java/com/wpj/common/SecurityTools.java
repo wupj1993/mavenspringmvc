@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2015 - 7 - 8
  * ---7 :58:49
- * ---×÷Õß:ÎâÅà»ù
+ * ---ä½œè€…:å´åŸ¹åŸº
  * ---QQ:757671834
  */
 
@@ -11,16 +11,16 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
 /**
- * ¹ØÓÚspring security µÄ¸¨Öú
- * @authorÎâÅà»ù
+ * å…³äºspring security çš„è¾…åŠ©
+ * @authorå´åŸ¹åŸº
  * @version1.0.0
  *
  */
 public class SecurityTools {
     /**
-     * »ñÈ¡ÓÃ»§Ãû×Ö
+     * è·å–ç”¨æˆ·åå­—
      *
-     * @return ÓÃ»§µÄÃû×Ö
+     * @return ç”¨æˆ·çš„åå­—
      */
     public static String getUserName() {
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -28,8 +28,8 @@ public class SecurityTools {
     }
 
     /**
-     * »ñÈ¡ÓÃ»§ÃÜÂë
-     * @return ÓÃ»§ÃÜÂë
+     * è·å–ç”¨æˆ·å¯†ç 
+     * @return ç”¨æˆ·å¯†ç 
      */
     public static String getUserPassword() {
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -37,8 +37,8 @@ public class SecurityTools {
     }
 
     /**
-     * »ñÈ¡ÓÃ»§È¨ÏŞ
-     * @return È¨ÏŞÊı×é
+     * è·å–ç”¨æˆ·æƒé™
+     * @return æƒé™æ•°ç»„
      */
     public static Object[] getUserAuthorities(){
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
