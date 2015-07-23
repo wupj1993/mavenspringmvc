@@ -18,65 +18,65 @@ import java.util.List;
 /**
  * Created by Server on 2015/5/30.
  */
-@Service
+@Service("empTypeServiceImp")
 public class EmpTypeServiceImp implements EmpTypeService {
     @Resource
     private T_emptypeMapper t_emptypeMapper;
 
     /**
-     * ��ɾ��
-     * @param tId Ҫɾ����id
+     * 锟斤拷删锟斤拷
+     * @param tId 要删锟斤拷锟斤拷id
      * @return
      */
     public int deleteByPrimaryKey(Integer tId) {
         return t_emptypeMapper.deleteByPrimaryKey(tId);
     }
     /**
-     * ����
-     * @param record ҵ��������
-     * @return Ӱ������
+     * 锟斤拷锟�
+     * @param record 业锟斤拷锟斤拷锟斤拷锟斤拷
+     * @return 影锟斤拷锟斤拷锟斤拷
      */
     public int insert(T_emptype record) {
         return t_emptypeMapper.insert(record);
     }
     /**&
-     * ���ӣ��Ƽ�ʹ�ã�
-     * @param record ҵ��������
-     * @return Ӱ������
+     * 锟斤拷樱锟斤拷萍锟绞癸拷茫锟�
+     * @param record 业锟斤拷锟斤拷锟斤拷锟斤拷
+     * @return 影锟斤拷锟斤拷锟斤拷
      */
     public int insertSelective(T_emptype record) {
         return t_emptypeMapper.insertSelective(record);
     }
 
     /**
-     * ����id ��ȡҵ��������Ϣ
-     * @param tId ҵ�����id
-     * @return  ҵ��������
+     * 锟斤拷锟斤拷id 锟斤拷取业锟斤拷锟斤拷锟斤拷锟斤拷息
+     * @param tId 业锟斤拷锟斤拷锟絠d
+     * @return  业锟斤拷锟斤拷锟斤拷锟斤拷
      */
     public T_emptype selectByPrimaryKey(Integer tId) {
         return selectByPrimaryKey(tId);
     }
     /**
-     * ����ҵ�������Ϣ ���Ƽ�ʹ�ã�
-     * @param record Ҫ���µĶ���
+     * 锟斤拷锟斤拷业锟斤拷锟斤拷锟斤拷锟较� 锟斤拷锟狡硷拷使锟矫ｏ拷
+     * @param record 要锟斤拷锟铰的讹拷锟斤拷
      * @return
      */
     public int updateByPrimaryKeySelective(T_emptype record) {
         return t_emptypeMapper.updateByPrimaryKeySelective(record);
     }
     /**
-     * Ҫ���µĶ���
+     * 要锟斤拷锟铰的讹拷锟斤拷
      * @param record
-     * @return Ӱ������ һ��0
+     * @return 影锟斤拷锟斤拷锟斤拷 一锟斤拷0
      */
     public int updateByPrimaryKey(T_emptype record) {
         return t_emptypeMapper.updateByPrimaryKey(record);
     }
     /**
-     * ���ݷ�ҳ��ȡҵ����Ϣ
-     * @param pageNum ҳ��
-     * @param pageSize ÿҳ��С
-     * @return ҵ���PageInfo���󼯺�
+     * 锟斤拷锟捷凤拷页锟斤拷取业锟斤拷锟斤拷息
+     * @param pageNum 页锟斤拷
+     * @param pageSize 每页锟斤拷小
+     * @return 业锟斤拷锟絇ageInfo锟斤拷锟襟集猴拷
      */
     @Override
     public PageInfo<T_emptype> selectAll(int pageNum, int pageSize) {

@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2015 - 7 - 8
  * ---7 :50:23
- * ---×÷Õß:ÎâÅà»ù
+ * ---ä½œè€…:å´åŸ¹åŸº
  * ---QQ:757671834
  */
 
@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 public class MyHandlerExceptionResolver implements HandlerExceptionResolver {
     @Override
     public ModelAndView resolveException(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) {
-        System.out.println("Òì³£×¥µ½ÁË£º---->"+e.getMessage());
+        System.out.println("å¼‚å¸¸æŠ“åˆ°äº†ï¼š---->"+e.getMessage());
         return null;
     }
 }

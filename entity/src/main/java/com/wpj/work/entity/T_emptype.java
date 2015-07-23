@@ -13,27 +13,27 @@ public class T_emptype  extends BaseDaomain {
     private Integer tId;
     /**
      *
-     *工种名字
+     *宸ョ鍚嶅瓧
      */
     private String tContent;
     /**
-     *工种介绍
+     *宸ョ浠嬬粛
      *
      */
     private String tIntroduce;
     /**
-     *工种图片地址
+     *宸ョ鍥剧墖鍦板潃
      *
      */
     private String tPhotoadd;
     /**
-     *其他介绍
+     *鍏朵粬浠嬬粛
      *
      */
 
     private String tOther;
     /**
-     * 是否删除
+     * 鏄惁鍒犻櫎
      */
     private int isDelete;
     public int getIsDelete() {

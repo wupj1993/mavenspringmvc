@@ -19,9 +19,9 @@ import java.util.List;
 
 /**
  * Created by Server on 2015/5/30.
- * Ô±¹¤
+ * å‘˜å·¥
  */
-@Service
+@Service("employeesServiceImp")
 public class EmployeesServiceImp implements EmployeesService {
     @Resource
     private T_employeesMapper t_employeesMapper;
@@ -34,9 +34,9 @@ public class EmployeesServiceImp implements EmployeesService {
     }
 
     /**
-     * ¸ù¾İÔ±¹¤id»ñÈ¡Ô±¹¤µÄÆÀÂÛ
+     * æ ¹æ®å‘˜å·¥idè·å–å‘˜å·¥çš„è¯„è®º
      * @param id
-     * @return ÆÀÂÛĞÅÏ¢µÄ¼¯ºÏ
+     * @return è¯„è®ºä¿¡æ¯çš„é›†åˆ
      */
     @Override
   public PageInfo<T_comment> selectCommentByEmployeeId(int id,int pageNum,int pageSize) {
@@ -44,19 +44,19 @@ public class EmployeesServiceImp implements EmployeesService {
     }
 
     /**
-     * Ìí¼ÓÔ±¹¤ĞÅÏ¢
-     * @param record Ô±¹¤ĞÅÏ¢
-     * @return Ó°ÏìĞĞÊı
+     * æ·»åŠ å‘˜å·¥ä¿¡æ¯
+     * @param record å‘˜å·¥ä¿¡æ¯
+     * @return å½±å“è¡Œæ•°
      */
     public int insert(T_employees record) {
         return t_employeesMapper.insertSelective(record);
     }
 
     /**
-     * ¸ù¾İ·ÖÒ³²éÑ¯Ô±¹¤ĞÅÏ¢
-     * @param page_Num Ò³Âë
-     * @param page_Size Ã¿Ò³´óĞ¡
-     * @return Ô±¹¤ĞÅÏ¢¼¯ºÏ
+     * æ ¹æ®åˆ†é¡µæŸ¥è¯¢å‘˜å·¥ä¿¡æ¯
+     * @param page_Num é¡µç 
+     * @param page_Size æ¯é¡µå¤§å°
+     * @return å‘˜å·¥ä¿¡æ¯é›†åˆ
      */
     @Override
     public PageInfo<T_employees> selectEmployee(int page_Num, int page_Size) {
@@ -69,9 +69,9 @@ public class EmployeesServiceImp implements EmployeesService {
     }
 
     /**
-     * Ìí¼ÓÔ±¹¤ĞÅÏ¢
-     * @param record Ô±¹¤ĞÅÏ¢
-     * @return Ó°ÏìĞĞÊı
+     * æ·»åŠ å‘˜å·¥ä¿¡æ¯
+     * @param record å‘˜å·¥ä¿¡æ¯
+     * @return å½±å“è¡Œæ•°
      */
     public int insertSelective(T_employees record) {
 
@@ -79,27 +79,27 @@ public class EmployeesServiceImp implements EmployeesService {
     }
 
     /**
-     * ¸ù¾İÔ±¹¤id»ñÈ¡Ô±¹¤ĞÅÏ¢
+     * æ ¹æ®å‘˜å·¥idè·å–å‘˜å·¥ä¿¡æ¯
      * @param eId
-     * @return Ô±¹¤ĞÅÏ¢ÊµÌåÀà
+     * @return å‘˜å·¥ä¿¡æ¯å®ä½“ç±»
      */
     public T_employees selectByPrimaryKey(Integer eId) {
         return t_employeesMapper.selectByPrimaryKey(eId);
     }
 
     /**
-     * ¸ù¾İid¸üĞÂÔ±¹¤ĞÅÏ¢
-     * @param record Ô±¹¤ĞÅÏ¢
-     * @return Ó°ÏìĞĞÊı
+     * æ ¹æ®idæ›´æ–°å‘˜å·¥ä¿¡æ¯
+     * @param record å‘˜å·¥ä¿¡æ¯
+     * @return å½±å“è¡Œæ•°
      */
     public int updateByPrimaryKeySelective(T_employees record) {
         return t_employeesMapper.updateByPrimaryKeySelective(record);
     }
 
     /**
-     * ¸ù¾İid¸üĞÂÔ±¹¤ĞÅÏ¢
-     * @param record Ô±¹¤ÊµÌåÀà
-      * @return Ó°ÏìĞĞÊı
+     * æ ¹æ®idæ›´æ–°å‘˜å·¥ä¿¡æ¯
+     * @param record å‘˜å·¥å®ä½“ç±»
+      * @return å½±å“è¡Œæ•°
      */
     public int updateByPrimaryKey(T_employees record) {
         return t_employeesMapper.updateByPrimaryKey(record);
