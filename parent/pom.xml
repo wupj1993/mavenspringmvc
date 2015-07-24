@@ -35,6 +35,10 @@
         <ehcache-version>2.10.0</ehcache-version>
         <fastjson-version>1.1.26</fastjson-version>
         <common-logging>1.2</common-logging>
+        <servlet-version>2.5</servlet-version>
+        <version.jackson>2.6.0</version.jackson>
+        <swagger-version>1.0.2</swagger-version>
+        <log4j-api-version>2.3</log4j-api-version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -86,9 +90,14 @@
                 <version>${log4j-version}</version>
             </dependency>
             <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j-api-version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
-                <version>${slf4j-version</version>
+                <version>${slf4j-version}</version>
             </dependency>
             <dependency>
                 <groupId>ch.qos.logback</groupId>
@@ -111,6 +120,11 @@
                 <artifactId>spring-security-config</artifactId>
                 <version>${spring-security-version}</version>
                 <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-core</artifactId>
+                <version>${spring-security-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.security</groupId>
@@ -145,6 +159,7 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-test</artifactId>
                 <version>${spring-version}</version>
+
             </dependency>
 
             <dependency>
@@ -230,6 +245,48 @@
                 <groupId>com.wpj.work</groupId>
                 <artifactId>core</artifactId>
                 <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>${servlet-version}</version>
+            </dependency>
+            <!--swagger 包-->
+            <dependency>
+                <groupId>com.mangofactory</groupId>
+                <artifactId>swagger-springmvc</artifactId>
+                <version>${swagger-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${version.jackson}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${version.jackson}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${version.jackson}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring-version}</version>
             </dependency>
         </dependencies>
 
