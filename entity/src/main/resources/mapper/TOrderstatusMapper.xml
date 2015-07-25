@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wpj.work.dao.TOrderstatusMapper" >
+  <resultMap id="BaseResultMap" type="com.wpj.work.entity.TOrderstatus" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="s_id" property="sId" jdbcType="INTEGER" />
+    <result column="s_content" property="sContent" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>

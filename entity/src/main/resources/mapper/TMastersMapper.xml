@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wpj.work.dao.TMastersMapper" >
+  <resultMap id="BaseResultMap" type="com.wpj.work.entity.TMasters" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="e_id" property="eId" jdbcType="INTEGER" />
+    <result column="emp_idcard" property="empIdcard" jdbcType="VARCHAR" />
+    <result column="emp_name" property="empName" jdbcType="VARCHAR" />
+    <result column="emp_phone" property="empPhone" jdbcType="VARCHAR" />
+    <result column="emp_pwd" property="empPwd" jdbcType="VARCHAR" />
+    <result column="emp_other" property="empOther" jdbcType="VARCHAR" />
+    <result column="emp_role" property="empRole" jdbcType="VARCHAR" />
+    <result column="emp_phonetwo" property="empPhonetwo" jdbcType="VARCHAR" />
+    <result column="emp_isDelete" property="empIsdelete" jdbcType="BIT" />
+  </resultMap>
+</mapper>

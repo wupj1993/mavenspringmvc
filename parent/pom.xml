@@ -6,19 +6,19 @@
 
     <groupId>com.wpj.work</groupId>
     <artifactId>parent</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <properties>
         <!-- 全局版本控制-->
-        <spring-version>4.0.2.RELEASE</spring-version>
+        <spring-version>4.1.2.RELEASE</spring-version>
         <spring-security-version>4.0.1.RELEASE</spring-security-version>
         <mybatis-version>3.2.8</mybatis-version>
         <spring-webflow-version>2.4.0.RELEASE</spring-webflow-version>
-        <mysql-version>5.1.18</mysql-version>
+        <mysql-version>5.1.29</mysql-version>
         <log4j-version>1.2.16</log4j-version>
         <mybatis-spring-version>1.2.2</mybatis-spring-version>
         <junit-version>4.9</junit-version>
-        <mysql-helper>3.7.2</mysql-helper>
+        <mysql-helper>4.0.0</mysql-helper>
         <jsqlparser-help>0.9.1</jsqlparser-help>
         <slf4j-version>1.7.5</slf4j-version>
         <logback-version>1.0.13</logback-version>
@@ -39,10 +39,12 @@
         <version.jackson>2.6.0</version.jackson>
         <swagger-version>1.0.2</swagger-version>
         <log4j-api-version>2.3</log4j-api-version>
+        <!--  编译jdk版本  -->
+        <jdk.version>1.8</jdk.version>
+
     </properties>
     <dependencyManagement>
         <dependencies>
-
             <!--测试-->
             <dependency>
                 <groupId>junit</groupId>
@@ -66,11 +68,6 @@
                 <groupId>org.springframework.webflow</groupId>
                 <artifactId>spring-webflow</artifactId>
                 <version>${spring-webflow-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>${spring-version}</version>
             </dependency>
             <!-- mybatis包 -->
             <dependency>
@@ -136,7 +133,6 @@
                 <artifactId>spring-aop</artifactId>
                 <version>${spring-version}</version>
             </dependency>
-
             <!-- jsr250 安全机制
 本例子使用的权限控制方式
 -->
@@ -153,29 +149,24 @@
                 <artifactId>druid</artifactId>
                 <version>${druid-version}</version>
             </dependency>
-
             <dependency>
                 <!-- 用于spring 框架的junit测试用的（基于弄快测试的编程）-->
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-test</artifactId>
                 <version>${spring-version}</version>
-
             </dependency>
-
             <dependency>
                 <!--spring自己提供的数据源，-->
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-jdbc</artifactId>
-                <version>${spring-version}</version>
+<version>${spring-version}</version>
             </dependency>
-
             <dependency>
                 <!--jstl标签，使得jsp可以使用jstl表达式-->
                 <groupId>javax.servlet</groupId>
                 <artifactId>jstl</artifactId>
                 <version>${jstl-version}</version>
             </dependency>
-
             <dependency>
                 <groupId>taglibs</groupId>
                 <artifactId>standard</artifactId>
@@ -225,7 +216,7 @@
                 <artifactId>spring-context-support</artifactId>
                 <version>${spring-version}</version>
             </dependency>
-<!--阿里巴巴fastjson-->
+            <!--阿里巴巴fastjson-->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
@@ -234,19 +225,18 @@
             <dependency>
                 <groupId>com.wpj.work</groupId>
                 <artifactId>entity</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>1.1-SNAPSHOT</version>
             </dependency>
-            <dependency>
-                <groupId>com.wpj.work</groupId>
-                <artifactId>common</artifactId>
-                <version>1.0-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.wpj.work</groupId>
-                <artifactId>core</artifactId>
-                <version>1.0-SNAPSHOT</version>
-            </dependency>
-
+            <!--<dependency>-->
+                <!--<groupId>com.wpj.work</groupId>-->
+                <!--<artifactId>common</artifactId>-->
+                <!--<version>1.0-SNAPSHOT</version>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+                <!--<groupId>com.wpj.work</groupId>-->
+                <!--<artifactId>core</artifactId>-->
+                <!--<version>1.0-SNAPSHOT</version>-->
+            <!--</dependency>-->
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>servlet-api</artifactId>
@@ -274,20 +264,86 @@
                 <version>${version.jackson}</version>
             </dependency>
             <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-web</artifactId>
-                <version>${spring-version}</version>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-xml</artifactId>
+                <version>${version.jackson}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-beans</artifactId>
                 <version>${spring-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.annotation</groupId>
+                <artifactId>javax.annotation-api</artifactId>
+                <version>1.2</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.transaction</groupId>
+                <artifactId>javax.transaction-api</artifactId>
+                <version>1.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-orm</artifactId>
+                <version>${spring-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-oxm</artifactId>
+                <version>${spring-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+            <version>${spring-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring-version}</version>
+
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-webmvc</artifactId>
                 <version>${spring-version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring-version}</version>
+            </dependency>
+            <!--spring-oxm依赖-->
+            <dependency>
+                <groupId>org.codehaus.castor</groupId>
+                <artifactId>castor-xml</artifactId>
+                <version>1.3.3</version>
+            </dependency>
+            <!-- Mybatis Generator -->
+            <dependency>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-core</artifactId>
+                <version>1.3.2</version>
+                <scope>compile</scope>
+                <optional>true</optional>
+            </dependency>
+            <!--自动生成实体的注解-->
+            <dependency>
+                <groupId>javax.persistence</groupId>
+                <artifactId>persistence-api</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <!--通用Mapper-->
+            <!--<dependency>-->
+                <!--<groupId>tk.mybatis</groupId>-->
+                <!--<artifactId>mapper</artifactId>-->
+                <!--<version>${mapper.version}</version>-->
+            <!--</dependency>-->
+
         </dependencies>
 
     </dependencyManagement>
@@ -295,40 +351,13 @@
         <pluginManagement>
             <plugins>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.1</version>
                     <configuration>
-                        <!--指定java的版本-->
-                        <source>1.8</source>
-                        <target>1.8</target>
-                        <encoding>UTF-8</encoding>
+                        <source>${jdk.version}</source>
+                        <target>${jdk.version}</target>
                     </configuration>
                 </plugin>
-                <!--处理资源文件的插件-->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <version>2.6</version>
-                </plugin>
-                <!--打包的插件-->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>2.5</version>
-                    <configuration>
-                        <warName>${project.artifactId}}</warName>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.mybatis.generator</groupId>
-                    <artifactId>mybatis-generator-maven-plugin</artifactId>
-                    <version>1.3.2</version>
-                    <configuration>
-                        <verbose>true</verbose>
-                        <overwrite>true</overwrite>
-                    </configuration>
-                </plugin>
+
 
             </plugins>
         </pluginManagement>

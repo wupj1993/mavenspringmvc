@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wpj.work.dao.TCommentMapper" >
+  <resultMap id="BaseResultMap" type="com.wpj.work.entity.TComment" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="c_id" property="cId" jdbcType="INTEGER" />
+    <result column="c_content" property="cContent" jdbcType="VARCHAR" />
+    <result column="e__id" property="eId" jdbcType="INTEGER" />
+    <result column="c_datatime" property="cDatatime" jdbcType="TIMESTAMP" />
+    <result column="c_isdelete" property="cIsdelete" jdbcType="BIT" />
+    <result column="emp_id" property="empId" jdbcType="INTEGER" />
+  </resultMap>
+</mapper>

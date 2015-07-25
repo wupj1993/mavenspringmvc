@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wpj.work.dao.TEmptypeMapper" >
+  <resultMap id="BaseResultMap" type="com.wpj.work.entity.TEmptype" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="t_id" property="tId" jdbcType="INTEGER" />
+    <result column="t_content" property="tContent" jdbcType="VARCHAR" />
+    <result column="t_introduce" property="tIntroduce" jdbcType="VARCHAR" />
+    <result column="t_photoAdd" property="tPhotoadd" jdbcType="VARCHAR" />
+    <result column="t_other" property="tOther" jdbcType="VARCHAR" />
+    <result column="t_isDelete" property="tIsdelete" jdbcType="BIT" />
+  </resultMap>
+</mapper>

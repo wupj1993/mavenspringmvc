@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wpj.work.dao.TOrderMapper" >
+  <resultMap id="BaseResultMap" type="com.wpj.work.entity.TOrder" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="o_id" property="oId" jdbcType="VARCHAR" />
+    <result column="o_starttime" property="oStarttime" jdbcType="TIMESTAMP" />
+    <result column="o_introduce" property="oIntroduce" jdbcType="VARCHAR" />
+    <result column="o_other" property="oOther" jdbcType="VARCHAR" />
+    <result column="o_status" property="oStatus" jdbcType="INTEGER" />
+    <result column="o_evaluation" property="oEvaluation" jdbcType="VARCHAR" />
+    <result column="o_onwer" property="oOnwer" jdbcType="INTEGER" />
+    <result column="o_number" property="oNumber" jdbcType="VARCHAR" />
+    <result column="o_isDelete" property="oIsdelete" jdbcType="TINYINT" />
+  </resultMap>
+</mapper>
