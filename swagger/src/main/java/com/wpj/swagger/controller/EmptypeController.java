@@ -11,8 +11,6 @@ import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
 import com.wpj.service.serviceImpl.EmpTypeServiceImp;
-import com.wpj.work.entity.BaseResult;
-import com.wpj.work.entity.T_emptype;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;

@@ -1,7 +1,6 @@
 package com.wpj.work;
 
 import com.wpj.service.serviceImpl.CommentServiceImp;
-import com.wpj.work.entity.T_comment;
 import org.junit.Test;
 
 import javax.annotation.Resource;
