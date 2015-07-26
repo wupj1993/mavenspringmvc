@@ -4,7 +4,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "t_comment")
-public class TComment {
+public class TComment extends BaseDaomain {
     /**
      * 评论id
      */
@@ -134,5 +134,17 @@ public class TComment {
      */
     public void setEmpId(Integer empId) {
         this.empId = empId;
+    }
+
+    @Override
+    public String toString() {
+        return "TComment{" +
+                "cId=" + cId +
+                ", cContent='" + cContent + '\'' +
+                ", eId=" + eId +
+                ", cDatatime=" + cDatatime +
+                ", cIsdelete=" + cIsdelete +
+                ", empId=" + empId +
+                '}';
     }
 }

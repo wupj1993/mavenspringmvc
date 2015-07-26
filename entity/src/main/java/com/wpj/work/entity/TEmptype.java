@@ -3,7 +3,7 @@ package com.wpj.work.entity;
 import javax.persistence.*;
 
 @Table(name = "t_emptype")
-public class TEmptype {
+public class TEmptype extends BaseDaomain {
     /**
      * 类别id
      */
@@ -140,5 +140,17 @@ public class TEmptype {
      */
     public void settIsdelete(Boolean tIsdelete) {
         this.tIsdelete = tIsdelete;
+    }
+
+    @Override
+    public String toString() {
+        return "TEmptype{" +
+                "tId=" + tId +
+                ", tContent='" + tContent + '\'' +
+                ", tIntroduce='" + tIntroduce + '\'' +
+                ", tPhotoadd='" + tPhotoadd + '\'' +
+                ", tOther='" + tOther + '\'' +
+                ", tIsdelete=" + tIsdelete +
+                '}';
     }
 }

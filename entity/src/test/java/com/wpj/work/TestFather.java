@@ -10,6 +10,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
+import org.springframework.test.context.transaction.TransactionConfiguration;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;
@@ -20,9 +22,12 @@ import javax.sql.DataSource;
  * @see ：测试类的父类，每个测试都必须继承这个类否则无法获取数据。
  */
 @RunWith(MySpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:config/spring-mybatis.xml"})
+@ContextConfiguration(locations = {"classpath:entity_config/spring-mybatis.xml"})
+@TransactionConfiguration(defaultRollback = true)
+@Transactional
 public class TestFather extends AbstractTransactionalJUnit4SpringContextTests {
 //    加载数据源
+
     @Resource(name="dataSource")
     @Override
     public void setDataSource(DataSource dataSource) {

@@ -17,13 +17,13 @@ import javax.sql.DataSource;
 
 /**
  * Created by wpj on 2015/2/23.
- * ×÷Õß£ºÎâÅà»ù
- * @see £º²âÊÔÀàµÄ¸¸Àà£¬Ã¿¸ö²âÊÔ¶¼±ØĞë¼Ì³ĞÕâ¸öÀà·ñÔòÎŞ·¨»ñÈ¡Êı¾İ¡£
+ * ä½œè€…ï¼šå´åŸ¹åŸº
+ * @see ï¼šæµ‹è¯•ç±»çš„çˆ¶ç±»ï¼Œæ¯ä¸ªæµ‹è¯•éƒ½å¿…é¡»ç»§æ‰¿è¿™ä¸ªç±»å¦åˆ™æ— æ³•è·å–æ•°æ®ã€‚
  */
 @RunWith(MySpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:config/spring-mybatis.xml","classpath:config/spring-service.xml"})
+@ContextConfiguration(locations = {"classpath:config/spring-service.xml","classpath:entity_config/spring-mybatis.xml"})
 public class TestFather extends AbstractTransactionalJUnit4SpringContextTests {
-//    ¼ÓÔØÊı¾İÔ´
+    //åŠ è½½æ•°æ®æº
     @Resource(name="dataSource")
     @Override
     public void setDataSource(DataSource dataSource) {

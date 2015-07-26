@@ -4,7 +4,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "t_order")
-public class TOrder {
+public class TOrder extends BaseDaomain{
     /**
      * 订单id
      */
@@ -213,5 +213,20 @@ public class TOrder {
      */
     public void setoIsdelete(Byte oIsdelete) {
         this.oIsdelete = oIsdelete;
+    }
+
+    @Override
+    public String toString() {
+        return "TOrder{" +
+                "oId='" + oId + '\'' +
+                ", oStarttime=" + oStarttime +
+                ", oIntroduce='" + oIntroduce + '\'' +
+                ", oOther='" + oOther + '\'' +
+                ", oStatus=" + oStatus +
+                ", oEvaluation='" + oEvaluation + '\'' +
+                ", oOnwer=" + oOnwer +
+                ", oNumber='" + oNumber + '\'' +
+                ", oIsdelete=" + oIsdelete +
+                '}';
     }
 }

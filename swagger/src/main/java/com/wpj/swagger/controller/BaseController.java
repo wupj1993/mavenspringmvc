@@ -8,6 +8,7 @@
 package com.wpj.swagger.controller;
 
 import com.wpj.common.LogsTools;
+import com.wpj.work.entity.BaseResult;
 
 /**
  * -------------------------------------

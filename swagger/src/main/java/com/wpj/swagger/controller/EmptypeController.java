@@ -10,7 +10,8 @@ package com.wpj.swagger.controller;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
-import com.wpj.service.serviceImpl.EmpTypeServiceImp;
+import com.wpj.work.entity.BaseResult;
+import com.wpj.work.entity.TEmployees;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -25,21 +26,21 @@ import javax.annotation.Resource;
 @RequestMapping("/empTypes")
 public class EmptypeController extends BaseController {
     @Resource
-    private EmpTypeServiceImp empTypeServiceImp;
+    private EmployeeServiceImpl empTypeServiceImp;
 
     @ResponseBody
     @RequestMapping(value = "/emptype", method = RequestMethod.POST)
     @ApiOperation(value = "addEmpType", notes = "新增工种信息", httpMethod = "POST", response = BaseResult.class)
     public BaseResult addEmpType(
             @ApiParam(required = true, name = "T_emptype", value = "工种实体")
-            @RequestBody T_emptype t_emptype
+            @RequestBody TEmployees t_emptype
     ) {
         logsTools.debug("工种信息：" + t_emptype.toString());
         BaseResult baseResult = null;
         if (t_emptype == null) {
             baseResult = buildFailedResultInfo(-1, "not allow empty");
         } else {
-            int result = empTypeServiceImp.insertSelective(t_emptype);
+            int result = 1;//empTypeServiceImp.save(t_emptype);
             if (result > 0) {
                 baseResult = buildSuccessResultInfo("success");
             } else {

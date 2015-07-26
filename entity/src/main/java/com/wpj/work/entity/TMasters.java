@@ -3,7 +3,7 @@ package com.wpj.work.entity;
 import javax.persistence.*;
 
 @Table(name = "t_masters")
-public class TMasters {
+public class TMasters extends BaseDaomain {
     /**
      * 雇主id
      */
@@ -205,5 +205,20 @@ public class TMasters {
      */
     public void setEmpIsdelete(Boolean empIsdelete) {
         this.empIsdelete = empIsdelete;
+    }
+
+    @Override
+    public String toString() {
+        return "TMasters{" +
+                "eId=" + eId +
+                ", empIdcard='" + empIdcard + '\'' +
+                ", empName='" + empName + '\'' +
+                ", empPhone='" + empPhone + '\'' +
+                ", empPwd='" + empPwd + '\'' +
+                ", empOther='" + empOther + '\'' +
+                ", empRole='" + empRole + '\'' +
+                ", empPhonetwo='" + empPhonetwo + '\'' +
+                ", empIsdelete=" + empIsdelete +
+                '}';
     }
 }

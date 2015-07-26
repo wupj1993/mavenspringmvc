@@ -3,7 +3,7 @@ package com.wpj.work.entity;
 import javax.persistence.*;
 
 @Table(name = "t_orderstatus")
-public class TOrderstatus {
+public class TOrderstatus extends BaseDaomain{
     /**
      * 状态id
      */
@@ -51,5 +51,13 @@ public class TOrderstatus {
      */
     public void setsContent(String sContent) {
         this.sContent = sContent;
+    }
+
+    @Override
+    public String toString() {
+        return "TOrderstatus{" +
+                "sId=" + sId +
+                ", sContent='" + sContent + '\'' +
+                '}';
     }
 }

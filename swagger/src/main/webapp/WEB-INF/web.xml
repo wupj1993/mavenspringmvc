@@ -15,8 +15,8 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:swagger_config/spring_mvc.xml,classpath:config/spring-mybatis.xml
-            ,classpath:config/spring-service.xml
+            <param-value>classpath:swagger_config/spring_mvc.xml,classpath:entity_config/spring-mybatis.xml
+                ,classpath:config/spring-service.xml
             </param-value>
         </init-param>
     </servlet>

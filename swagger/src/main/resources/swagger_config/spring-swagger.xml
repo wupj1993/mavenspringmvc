@@ -10,6 +10,5 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
        <bean class="com.wpj.swagger.SwaggerConfig"/>
-    <import resource="../../../../../entity/src/main/resource/config/spring-mybatis.xml"/>
-    <import resource="../../../../../cores/src/main/resources/config/spring-service.xml"/>
+
 </beans>

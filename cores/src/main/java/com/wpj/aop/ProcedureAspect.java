@@ -1,13 +1,12 @@
 /*
  * Copyright (c) 2015 - 7 - 8
  * ---7 :56:55
- * ---×÷Õß:ÎâÅà»ù
+ * ---ä½œè€…:å´åŸ¹åŸº
  * ---QQ:757671834
  */
 
 package com.wpj.aop;
 
-import com.wpj.common.SecurityTools;
 import org.apache.log4j.Logger;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -36,14 +35,14 @@ private Logger logger= Logger.getLogger(ProcedureAspect.class);
 		logger.info("info:----------------------------------------------------------->before");
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
 		HttpSession session = request.getSession();
-		//¶ÁÈ¡sessionÖĞµÄÓÃ»§
-		logger.info("name---------->"+ SecurityTools.getUserName());
-		//ÇëÇóµÄIP
+		//è¯»å–sessionä¸­çš„ç”¨æˆ·
+	//	logger.info("name---------->"+ SecurityTools.getUserName());
+		//è¯·æ±‚çš„IP
 		String ip = request.getRemoteAddr();
 		logger.info("ip----------->"+ip);
-		logger.info("ÇëÇó·½·¨:" + (joinPoint.getTarget().getClass().getName() + "." + joinPoint.getSignature().getName() + "()"));
+		logger.info("è¯·æ±‚æ–¹æ³•:" + (joinPoint.getTarget().getClass().getName() + "." + joinPoint.getSignature().getName() + "()"));
 		try {
-			logger.info("·½·¨ÃèÊö:" + getControllerMethodDescription(joinPoint));
+			logger.info("æ–¹æ³•æè¿°:" + getControllerMethodDescription(joinPoint));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -87,9 +86,9 @@ private Logger logger= Logger.getLogger(ProcedureAspect.class);
 		}
 	}
 	/**
-	 * »ñÈ¡×¢½âÖĞ¶Ô·½·¨µÄÃèÊöĞÅÏ¢ ÓÃÓÚController²ã×¢½â
-	 * @param joinPoint ÇĞµã
-	 * @return ·½·¨ÃèÊö
+	 * è·å–æ³¨è§£ä¸­å¯¹æ–¹æ³•çš„æè¿°ä¿¡æ¯ ç”¨äºControllerå±‚æ³¨è§£
+	 * @param joinPoint åˆ‡ç‚¹
+	 * @return æ–¹æ³•æè¿°
 	 * @throws Exception
 	 */
 	public  static String getControllerMethodDescription(JoinPoint joinPoint)  throws Exception {

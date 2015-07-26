@@ -3,7 +3,7 @@ package com.wpj.work.entity;
 import javax.persistence.*;
 
 @Table(name = "t_user")
-public class TUser {
+public class TUser extends BaseDaomain{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

@@ -3,7 +3,7 @@ package com.wpj.work.entity;
 import javax.persistence.*;
 
 @Table(name = "t_employees")
-public class TEmployees {
+public class TEmployees extends BaseDaomain {
     @Id
     @Column(name = "e_id")
     private Integer eId;
@@ -215,5 +215,21 @@ public class TEmployees {
      */
     public void seteIsdelete(Boolean eIsdelete) {
         this.eIsdelete = eIsdelete;
+    }
+
+    @Override
+    public String toString() {
+        return "TEmployees{" +
+                "eId=" + eId +
+                ", eName='" + eName + '\'' +
+                ", eAge=" + eAge +
+                ", eIntroduce=" + eIntroduce +
+                ", eMvaddress='" + eMvaddress + '\'' +
+                ", ePhone='" + ePhone + '\'' +
+                ", ePhotoadd='" + ePhotoadd + '\'' +
+                ", eComments=" + eComments +
+                ", eType='" + eType + '\'' +
+                ", eIsdelete=" + eIsdelete +
+                '}';
     }
 }
