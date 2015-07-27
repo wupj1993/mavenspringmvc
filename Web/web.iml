@@ -29,7 +29,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.9" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
-    <orderEntry type="module" module-name="core" />
+    <orderEntry type="library" name="Maven: com.wpj.work:core:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.webflow:spring-webflow:2.4.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: opensymphony:ognl:2.6.11" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.webflow:spring-binding:2.4.0.RELEASE" level="project" />

@@ -11,6 +11,8 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.transaction.TransactionConfiguration;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;
@@ -22,6 +24,8 @@ import javax.sql.DataSource;
  */
 @RunWith(MySpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:config/spring-service.xml","classpath:entity_config/spring-mybatis.xml"})
+@Transactional
+@TransactionConfiguration(defaultRollback = true)
 public class TestFather extends AbstractTransactionalJUnit4SpringContextTests {
     //加载数据源
     @Resource(name="dataSource")

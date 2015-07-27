@@ -3,11 +3,8 @@
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/../common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../cores" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../cores" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../cores" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../cores/src/main/java/com/wpj/aop/Output.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../cores/src/main/java/com/wpj/aop/Procedure.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../cores/src/main/java/com/wpj/aop/ProcedureAspect.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../cores/src/main/java/com/wpj/aop/ProcedureAspect.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../cores/src/main/java/com/wpj/aop/ProcedureException.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../cores/src/main/java/com/wpj/exception/ErrorInfo.java" charset="UTF-8" />
@@ -15,7 +12,6 @@
     <file url="file://$PROJECT_DIR$/../cores/src/main/java/com/wpj/exception/InvalidRequestException.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../cores/src/main/java/com/wpj/exception/ResourceNotFoundException.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../cores/src/main/java/com/wpj/exception/RosourceForbinException.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../cores/src/main/java/com/wpj/security/ManagerDetialService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../cores/src/main/java/com/wpj/service/CommentService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../cores/src/main/java/com/wpj/service/EmpTypeService.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/../cores/src/main/java/com/wpj/service/EmployeeService.java" charset="GBK" />
@@ -26,10 +22,10 @@
     <file url="file://$PROJECT_DIR$/../cores/src/main/java/com/wpj/service/impl/EmployeeServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../cores/src/main/resources/log4j.properties" charset="GBK" />
     <file url="file://$PROJECT_DIR$/../cores/src/test/java/com/wpj/work/TestFather.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../cores/src/test/java/com/wpj/work/TestFather.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../entity" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../entity/src/test/java/com/wpj/work/TestFather.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cores" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../swagger/src/main/resources/log4j.properties" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

@@ -17,7 +17,7 @@ public abstract class BaseService<T> {
     @Autowired
     protected Mapper<T> commonmapper;
     public int save(T entity){
-
+        System.out.println("-------entitiy"+entity);
         return commonmapper.insert(entity);
     }
     public int delete(T entity){

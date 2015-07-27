@@ -10,6 +10,7 @@ package com.wpj.swagger.controller;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
+import com.wpj.service.impl.EmployeeServiceImpl;
 import com.wpj.work.entity.BaseResult;
 import com.wpj.work.entity.TEmployees;
 import org.springframework.web.bind.annotation.*;
@@ -26,8 +27,7 @@ import javax.annotation.Resource;
 @RequestMapping("/empTypes")
 public class EmptypeController extends BaseController {
     @Resource
-    private EmployeeServiceImpl empTypeServiceImp;
-
+    private EmployeeServiceImpl employeeService;
     @ResponseBody
     @RequestMapping(value = "/emptype", method = RequestMethod.POST)
     @ApiOperation(value = "addEmpType", notes = "新增工种信息", httpMethod = "POST", response = BaseResult.class)
@@ -40,7 +40,7 @@ public class EmptypeController extends BaseController {
         if (t_emptype == null) {
             baseResult = buildFailedResultInfo(-1, "not allow empty");
         } else {
-            int result = 1;//empTypeServiceImp.save(t_emptype);
+            int result = employeeService.save(t_emptype);
             if (result > 0) {
                 baseResult = buildSuccessResultInfo("success");
             } else {

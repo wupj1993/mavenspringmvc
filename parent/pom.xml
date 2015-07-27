@@ -275,9 +275,6 @@
             <version>${my-core}</version>
             </dependency>
 
-
-
-
             <!--swagger 包-->
             <dependency>
                 <groupId>com.mangofactory</groupId>
