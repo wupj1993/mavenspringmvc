@@ -103,7 +103,36 @@
                      <value>clientEncoding=UTF-8</value>
               </property>
        </bean>
+    <bean id="druid-stat-interceptor"
+          class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor">
+    </bean>
 
+    <bean id="druid-type-proxyCreator" class="com.alibaba.druid.support.spring.stat.BeanTypeAutoProxyCreator">
+        <!-- 所有ABCInterface的派生类被拦截监控  -->
+        <property name="targetBeanType" value="tk.mybatis.mapper.common.Mapper" />
+        <property name="interceptorNames">
+            <list>
+                <value>druid-stat-interceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean
+            class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+        <property name="proxyTargetClass" value="true" />
+        <property name="beanNames">
+            <list>
+                <!-- 这里配置需要拦截的bean id列表 -->
+                <value>com.wpj.work.dao.TCommentMapper</value>
+                <value>com.wpj.work.dao.TEmployeesMapper</value>
+            </list>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>druid-stat-interceptor</value>
+            </list>
+        </property>
+    </bean>
 
        <!-- 配置事务管理器 -->
        <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

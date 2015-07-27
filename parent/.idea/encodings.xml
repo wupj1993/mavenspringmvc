@@ -24,8 +24,6 @@
     <file url="file://$PROJECT_DIR$/../cores/src/test/java/com/wpj/work/TestFather.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../entity" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../entity/src/test/java/com/wpj/work/TestFather.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cores" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../swagger/src/main/resources/log4j.properties" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
