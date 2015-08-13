@@ -8,10 +8,12 @@ package com.wpj.service.serviceImpl;
 
 import com.wpj.service.OrderService;
 import com.wpj.work.entity.T_order;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by Server on 2015/5/30.
  */
+@Service("orderServiceImp")
 public class OrderServiceImp implements OrderService {
     public int deleteByPrimaryKey(String oId) {
         return 0;

@@ -19,26 +19,26 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- *ÆÀÂÛ
+ *è¯„è®º
  */
-@Service
+@Service("commentServiceImp")
 public class CommentServiceImp implements CommentService {
 @Resource
 private T_commentMapper t_commentMapper;
     private static Logger log = Logger.getLogger(CommentServiceImp.class);
 
     /**
-     * ¸ù¾İidÉ¾³ıÆÀÂÛ
-     * @param cId  ÒªÉ¾³ıµÄid
-     * @return ·µ»ØÓ°ÏìĞĞÊı£¨1´ú±íÒ»ĞĞÊÜÓ°Ïì£¬0´ú±í²»ÊÜÓ°Ïì£©
+     * æ ¹æ®idåˆ é™¤è¯„è®º
+     * @param cId  è¦åˆ é™¤çš„id
+     * @return è¿”å›å½±å“è¡Œæ•°ï¼ˆ1ä»£è¡¨ä¸€è¡Œå—å½±å“ï¼Œ0ä»£è¡¨ä¸å—å½±å“ï¼‰
      */
     public int deleteByPrimaryKey(Integer cId) {
         return t_commentMapper.deleteByPrimaryKey(cId);
     }
     /**
-     * ¸ù¾İ¹ÍÖ÷id É¾³ıÆÀÂÛ
-     * @param cId ¹ÍÖ÷id
-     * @return ·µ»ØÓ°ÏìĞĞÊı£¨1´ú±íÒ»ĞĞÊÜÓ°Ïì£¬0´ú±í²»ÊÜÓ°Ïì£©
+     * æ ¹æ®é›‡ä¸»id åˆ é™¤è¯„è®º
+     * @param cId é›‡ä¸»id
+     * @return è¿”å›å½±å“è¡Œæ•°ï¼ˆ1ä»£è¡¨ä¸€è¡Œå—å½±å“ï¼Œ0ä»£è¡¨ä¸å—å½±å“ï¼‰
      */
     @Override
     public int deleteByMasterKey(Integer cId) {
@@ -46,9 +46,9 @@ private T_commentMapper t_commentMapper;
     }
 
     /**
-     * ¸ù¾İÆÀÂÛÔ±¹¤idÉ¾³ı
-     * @param cId Ô±¹¤id
-     * @return ·µ»ØÓ°ÏìĞĞÊı£¨1´ú±íÒ»ĞĞÊÜÓ°Ïì£¬0´ú±í²»ÊÜÓ°Ïì£©
+     * æ ¹æ®è¯„è®ºå‘˜å·¥idåˆ é™¤
+     * @param cId å‘˜å·¥id
+     * @return è¿”å›å½±å“è¡Œæ•°ï¼ˆ1ä»£è¡¨ä¸€è¡Œå—å½±å“ï¼Œ0ä»£è¡¨ä¸å—å½±å“ï¼‰
      */
     @Override
     public int deleteByEmpKey(Integer cId) {
@@ -56,7 +56,7 @@ private T_commentMapper t_commentMapper;
     }
 
     /**
-     * Ôö¼ÓÆÀÂÛ
+     * å¢åŠ è¯„è®º
      * @param record
      * @return
      */
@@ -65,7 +65,7 @@ private T_commentMapper t_commentMapper;
     }
 
     /**
-     * Ôö¼ÓÆÀÂÛ
+     * å¢åŠ è¯„è®º
      * @param record
      * @return
      */
@@ -74,7 +74,7 @@ private T_commentMapper t_commentMapper;
     }
 
     /**
-     * ²éÑ¯¸ù¾İÆÀÂÛid
+     * æŸ¥è¯¢æ ¹æ®è¯„è®ºid
      * @param cId
      * @return
      */
@@ -83,41 +83,41 @@ private T_commentMapper t_commentMapper;
     }
 
     /**
-     * ¸ù¾İ¹ÍÖ÷µÄid·ÖÒ³»ñÈ¡ÆÀÂÛµÄ¼¯ºÏ
-     * @param eId ¹ÍÖ÷id
-     * @param page_Num Ò³Âë
-     * @param page_Size Ã¿Ò»Ò³µÄ´óĞ¡
-     * @return ÆÀÂÛµÄ¼¯ºÏ »ñÈ¡·½·¨ pageInfo.getList().get(0)
+     * æ ¹æ®é›‡ä¸»çš„idåˆ†é¡µè·å–è¯„è®ºçš„é›†åˆ
+     * @param eId é›‡ä¸»id
+     * @param page_Num é¡µç 
+     * @param page_Size æ¯ä¸€é¡µçš„å¤§å°
+     * @return è¯„è®ºçš„é›†åˆ è·å–æ–¹æ³• pageInfo.getList().get(0)
      */
     @Override
     public PageInfo<T_comment> selectByMasterId(int eId, int page_Num, int page_Size) {
         PageHelper.startPage(page_Num, page_Size);
         List<T_comment> list=t_commentMapper.selectByMasterId(eId);
         PageInfo<T_comment> pageInfo=new PageInfo<T_comment>(list);
-        log.debug("·ÖÒ³µÄ½á¹û¼¯ºÏ"+pageInfo);
+        log.debug("åˆ†é¡µçš„ç»“æœé›†åˆ"+pageInfo);
         return pageInfo;
     }
 
     /**
-     * ¸ù¾İÔ±¹¤id·ÖÒ³»ñÈ¡ÆÀÂÛ
-     * @param empid Ô±¹¤id
-     * @param page_Num Ò³Âë
-     * @param page_Size  Ã¿Ò»Ò³µÄ´óĞ¡
-     * @return ·ÖÒ³¼¯ºÏ
+     * æ ¹æ®å‘˜å·¥idåˆ†é¡µè·å–è¯„è®º
+     * @param empid å‘˜å·¥id
+     * @param page_Num é¡µç 
+     * @param page_Size  æ¯ä¸€é¡µçš„å¤§å°
+     * @return åˆ†é¡µé›†åˆ
      */
     @Override
     public PageInfo<T_comment> selectByEmployeeId(int empid, int page_Num, int page_Size) {
         PageHelper.startPage(page_Num, page_Size);
         List<T_comment> list=t_commentMapper.selectByEmployeeId(empid);
         PageInfo<T_comment> pageInfo=new PageInfo<T_comment>(list);
-        log.debug("·ÖÒ³µÄ½á¹û¼¯ºÏ"+pageInfo);
+        log.debug("åˆ†é¡µçš„ç»“æœé›†åˆ"+pageInfo);
         return pageInfo;
     }
 
     /**
-     *Ö±½Ó¸ù¾İ·ÖÒ³»ñÈ¡ÆÀÂÛ,Ä¬ÈÏ»ñÈ¡Î´É¾³ıÆÀÂÛ
-     * @param page_Num µÚ¼¸Ò³
-     * @param page_Size Ã¿Ò³µÄ´óĞ¡
+     *ç›´æ¥æ ¹æ®åˆ†é¡µè·å–è¯„è®º,é»˜è®¤è·å–æœªåˆ é™¤è¯„è®º
+     * @param page_Num ç¬¬å‡ é¡µ
+     * @param page_Size æ¯é¡µçš„å¤§å°
      * @return
      */
     @Override
@@ -129,10 +129,10 @@ private T_commentMapper t_commentMapper;
         return pageInfo;
     }
     /**
-     * ×Ô¶¨Òå²éÑ¯µÄÆÀÂÛÊÇ·ñÉ¾³ı¡£
-     * @param page_Num Ò³Âë
-     * @param page_Size Ã¿Ò³´óĞ¡
-     * @param status ×´Ì¬
+     * è‡ªå®šä¹‰æŸ¥è¯¢çš„è¯„è®ºæ˜¯å¦åˆ é™¤ã€‚
+     * @param page_Num é¡µç 
+     * @param page_Size æ¯é¡µå¤§å°
+     * @param status çŠ¶æ€
      * @return
      */
     public PageInfo<T_comment> selectByPage(int page_Num, int page_Size,Status status) {
@@ -145,8 +145,8 @@ private T_commentMapper t_commentMapper;
 
 
     /**
-     *¸üĞÂ
-     * @param record ÆÀÂÛ
+     *æ›´æ–°
+     * @param record è¯„è®º
      * @return
      */
     public int updateByPrimaryKeySelective(T_comment record) {

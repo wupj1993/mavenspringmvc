@@ -8,10 +8,12 @@ package com.wpj.service.serviceImpl;
 
 import com.wpj.service.OrderStatusService;
 import com.wpj.work.entity.T_orderStatus;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by Server on 2015/5/30.
  */
+@Service("orderStatusServiceImp")
 public class OrderStatusServiceImp implements OrderStatusService {
     public int deleteByPrimaryKey(Integer sId) {
         return 0;

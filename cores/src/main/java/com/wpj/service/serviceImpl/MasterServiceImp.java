@@ -8,10 +8,12 @@ package com.wpj.service.serviceImpl;
 
 import com.wpj.service.MasterService;
 import com.wpj.work.entity.T_masters;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by Server on 2015/5/30.
  */
+@Service("masterServiceImp")
 public class MasterServiceImp implements MasterService {
     public int deleteByPrimaryKey(Integer eId) {
         return 0;
